@@ -8,6 +8,8 @@ from src.util.logger import logger
 from src.util.ui import ui
 
 from src.modules.spammingmenu.channelspammer import channelspammer
+from src.modules.spammingmenu.multichannelspammer import multichannelspammer
+from src.modules.spammingmenu.replyspammer import replyspammer
 
 class spammingmenu:
     def __init__(self):
@@ -18,8 +20,8 @@ class spammingmenu:
     def menu(self):
         options = {
             'Channel Spammer (FREE)': channelspammer().menu,
-            'Multi-Channel Spammer': lambda: (self.logger.log('This option is PAID ONLY, enter to continue'), input('')),
-            'Reply Spammer': lambda: (self.logger.log('This option is PAID ONLY, enter to continue'), input('')),
+            'Multi-Channel Spammer': multichannelspammer().menu,
+            'Reply Spammer': replyspammer().menu,
         }
         
         while True:

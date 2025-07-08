@@ -6,6 +6,9 @@
 from src import *
 from src.util.logger import logger
 from src.util.ui import ui
+from src.modules.vcmenu.vcjoiner import vcjoiner
+from src.modules.vcmenu.vcspamjoinleave import vcspamjoinleave
+from src.modules.vcmenu.soundboardspammer import soundboardspammer
 
 class vcmenu:
     def __init__(self):
@@ -15,9 +18,9 @@ class vcmenu:
 
     def menu(self):
         options = {
-            'VC Joiner': lambda: (self.logger.log('This option is PAID ONLY, enter to continue'), input('')),
-            'VC Spam Join-Leave': lambda: (self.logger.log('This option is PAID ONLY, enter to continue'), input('')),
-            'Soundboard Spammer': lambda: (self.logger.log('This option is PAID ONLY, enter to continue'), input('')),
+            'VC Joiner': vcjoiner().menu,
+            'VC Spam Join-Leave': vcspamjoinleave().menu,
+            'Soundboard Spammer': soundboardspammer().menu,
         }
         
         while True:

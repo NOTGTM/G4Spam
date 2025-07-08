@@ -6,6 +6,9 @@
 from src import *
 from src.util.logger import logger
 from src.util.ui import ui
+from src.modules.scrapingmenu.idscraper import idscraper
+from src.modules.scrapingmenu.usernamescraper import usernamescraper
+from src.modules.scrapingmenu.invitescraper import invitescraper
 
 class scrapingmenu:
     def __init__(self):
@@ -15,9 +18,9 @@ class scrapingmenu:
 
     def menu(self):
         options = {
-            'ID Scraper': lambda: (self.logger.log('This option is PAID ONLY, enter to continue'), input('')),
-            'Username Scraper': lambda: (self.logger.log('This option is PAID ONLY, enter to continue'), input('')),
-            'Invite Scraper': lambda: (self.logger.log('This option is PAID ONLY, enter to continue'), input(''))
+            'ID Scraper': idscraper().menu,
+            'Username Scraper': usernamescraper().menu,
+            'Invite Scraper': invitescraper().menu
         }
         
         while True:

@@ -6,6 +6,7 @@
 from src import *
 from src.util.logger import logger
 from src.util.ui import ui
+from src.modules.advertisingmenu.tokenfiller import tokenfiller
 
 class advertisingmenu:
     def __init__(self):
@@ -15,7 +16,7 @@ class advertisingmenu:
 
     def menu(self):
         options = {
-            'Token Filler': lambda: (self.logger.log('This option is PAID ONLY, enter to continue'), input('')),
+            'Token Filler': tokenfiller().menu,
         }
         
         while True:

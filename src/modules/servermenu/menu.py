@@ -9,6 +9,7 @@ from src.util.ui import ui
 
 from src.modules.servermenu.joiner import joiner
 from src.modules.servermenu.leaver import leaver
+from src.modules.servermenu.isinserver import isinserver
 
 class servermenu:
     def __init__(self):
@@ -20,7 +21,7 @@ class servermenu:
         options = {
             'Joiner (FREE)': joiner().menu,
             'Leaver (FREE)': leaver().menu,
-            'Is In Server': lambda: (self.logger.log('This option is PAID ONLY, enter to continue'), input('')),
+            'Is In Server': isinserver().menu,
         }
         
         while True:

@@ -6,6 +6,7 @@
 from src import *
 from src.util.logger import logger
 from src.util.ui import ui
+from src.modules.massdmmenu.oneusermassdm import oneusermassdm
 
 class massdmmenu:
     def __init__(self):
@@ -15,7 +16,7 @@ class massdmmenu:
 
     def menu(self):
         options = {
-            'One-User Mass DM': lambda: (self.logger.log('This option is PAID ONLY, enter to continue'), input('')),
+            'One-User Mass DM': oneusermassdm().menu,
         }
         
         while True:

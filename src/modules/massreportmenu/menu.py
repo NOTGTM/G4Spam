@@ -6,6 +6,8 @@
 from src import *
 from src.util.logger import logger
 from src.util.ui import ui
+from src.modules.massreportmenu.profilemassreport import profilemassreport
+from src.modules.massreportmenu.messagemassreport import messagemassreport
 
 class massreportmenu:
     def __init__(self):
@@ -15,8 +17,8 @@ class massreportmenu:
 
     def menu(self):
         options = {
-            'Profile Mass Report': lambda: (self.logger.log('This option is PAID ONLY, enter to continue'), input('')),
-            'Message Mass Report': lambda: (self.logger.log('This option is PAID ONLY, enter to continue'), input('')),
+            'Profile Mass Report': profilemassreport().menu,
+            'Message Mass Report': messagemassreport().menu,
         }
         
         while True:

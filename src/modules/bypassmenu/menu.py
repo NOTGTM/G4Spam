@@ -8,6 +8,9 @@ from src.util.logger import logger
 from src.util.ui import ui
 
 from src.modules.bypassmenu.reactionbypass import reactionbypass
+from src.modules.bypassmenu.buttonbypass import buttonbypass
+from src.modules.bypassmenu.onboarding import onboarding
+from src.modules.bypassmenu.rulebypass import rulebypass
 
 class bypassmenu:
     def __init__(self):
@@ -18,9 +21,9 @@ class bypassmenu:
     def menu(self):
         options = {
             'Reaction Bypass (FREE)': reactionbypass().menu,
-            'Button Bypass': lambda: (self.logger.log('This option is PAID ONLY, enter to continue'), input('')),
-            'Onboarding': lambda: (self.logger.log('This option is PAID ONLY, enter to continue'), input('')),
-            'Rule Bypass': lambda: (self.logger.log('This option is PAID ONLY, enter to continue'), input('')),
+            'Button Bypass': buttonbypass().menu,
+            'Onboarding': onboarding().menu,
+            'Rule Bypass': rulebypass().menu,
         }
         
         while True:

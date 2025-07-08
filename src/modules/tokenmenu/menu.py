@@ -9,6 +9,10 @@ from src.util.ui import ui
 
 from src.modules.tokenmenu.checker import checker
 from src.modules.tokenmenu.formatter import formatter
+from src.modules.tokenmenu.biochanger import biochanger
+from src.modules.tokenmenu.avatarchanger import avatarchanger
+from src.modules.tokenmenu.clantagchanger import clantagchanger
+from src.modules.tokenmenu.logonbrowser import logonbrowser
 
 class tokenmenu:
     def __init__(self):
@@ -19,10 +23,10 @@ class tokenmenu:
     def menu(self):
         options = {
             'Checker (FREE)': checker().menu,
-            'Bio Changer': lambda: (self.logger.log('This option is PAID ONLY, enter to continue'), input('')),
-            'Avatar Changer': lambda: (self.logger.log('This option is PAID ONLY, enter to continue'), input('')),
-            'Clan Tag Changer': lambda: (self.logger.log('This option is PAID ONLY, enter to continue'), input('')),
-            'Log On Browser': lambda: (self.logger.log('This option is PAID ONLY, enter to continue'), input('')),
+            'Bio Changer': biochanger().menu,
+            'Avatar Changer': avatarchanger().menu,
+            'Clan Tag Changer': clantagchanger().menu,
+            'Log On Browser': logonbrowser().menu,
             'Formatter (FREE)': formatter().menu
         }
         

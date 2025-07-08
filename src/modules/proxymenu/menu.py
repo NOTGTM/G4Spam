@@ -6,6 +6,7 @@
 from src import *
 from src.util.logger import logger
 from src.util.ui import ui
+from src.modules.proxymenu.proxychecker import proxychecker
 
 class proxymenu:
     def __init__(self):
@@ -17,7 +18,7 @@ class proxymenu:
         options = {
             'Proxy Format': lambda: (self.logger.log('Format it like this user:password@host:port'), input(''))[1],
             'Proxy Formatter': lambda: (self.logger.log('Added soon bc it actualy needs more work than u think'), input(''))[1],
-            'Proxy Checker': lambda: (self.logger.log('This option is PAID ONLY, enter to continue'), input('')),
+            'Proxy Checker': proxychecker().menu,
         }
         
         while True:

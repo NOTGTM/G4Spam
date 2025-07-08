@@ -7,6 +7,7 @@
 from src import *
 from src.util.logger import logger
 from src.util.ui import ui
+from src.modules.boostingmenu.booster import booster
 
 class boostingmenu:
     def __init__(self):
@@ -16,7 +17,7 @@ class boostingmenu:
 
     def menu(self):
         options = {
-            'Booster': lambda: (self.logger.log('This option is PAID ONLY, enter to continue'), input('')),
+            'Booster': booster().menu,
         }
         
         while True:
